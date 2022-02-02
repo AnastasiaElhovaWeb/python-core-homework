@@ -7,28 +7,17 @@ class BaseAction:
 
     def __gt__(self, other):
         if self.name == 'Rock':
-            if other.name == 'Scissors':
-                return True
+            return other.name == 'Scissors'
         if self.name == 'Paper':
-            if other.name == 'Rock':
-                return True
+            return other.name == 'Rock'
         if self.name == 'Scissors':
-            if other.name == 'Paper':
-                return True
-
-    def __lt__(self, other):
-        if self.name == 'Rock':
-            if other.name == 'Paper':
-                return True
-        if self.name == 'Paper':
-            if other.name == 'Scissors':
-                return True
-        if self.name == 'Scissors':
-            if other.name == 'Rock':
-                return True
+            return other.name == 'Paper':
 
     def __eq__(self, other):
         return self.name == other.name
+
+    def __hash__(self):
+        return hash(self.name)
 
 
 class NothingAction(BaseAction):
