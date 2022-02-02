@@ -19,7 +19,7 @@ def build_roles_tree(mapping):
             }
             roles.append(role)
         category = {
-            'id': categorySrc['id'],
+            'id': 'category-' + categorySrc['id'],
             'text': categorySrc['name'],
             'items': roles
         }
